@@ -22,6 +22,9 @@ func read_cursor_position() -> void:
 	var cursor_position: Vector2 = get_global_mouse_position()
 	direction_to_cursor = cursor_position - global_position
 
+func read_cursor_click() -> bool:
+	return Input.is_action_pressed("Dash")
+
 func cursor_within_vision_range() -> bool:
 	return direction_to_cursor.length() < vision_range
 
